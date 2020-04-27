@@ -1157,7 +1157,7 @@ ol {
 @media (min-width: 1024px) {
   .map__wrapper {
     padding-top: 86px;
-    right: inherit;
+    right: auto;
     width: calc( 100% - 600px);
     bottom: 0;
   }
@@ -1258,7 +1258,7 @@ ol {
     width: 600px;
     z-index: 10;
     top: 86px;
-    left: inherit;
+    left: auto;
   }
 }
 

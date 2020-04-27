@@ -1151,12 +1151,6 @@ var scrollOptions = {
     };
   },
   methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])(['getSpots', 'selectSpot']), {
-    headerHeight: function headerHeight() {
-      var header = document.querySelectorAll('header')[0];
-      console.log(header);
-      var height = header.offsetHeight(true);
-      this.hh = 'margin-top: ' + height + 'px';
-    },
     isMobile: function isMobile() {
       if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
         return true;
@@ -1167,7 +1161,6 @@ var scrollOptions = {
   }),
   mounted: function mounted() {
     this.getSpots();
-    this.headerHeight();
   },
   computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapGetters"])({
     spots: "getSpots",
@@ -34463,7 +34456,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "page-wrapper", style: _vm.hh },
+    { staticClass: "page-wrapper" },
     [
       _c("mapbox", {
         attrs: { spots: _vm.spots, isMobile: _vm.isMobile() },

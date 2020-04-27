@@ -1,5 +1,5 @@
 <template>
-    <div class="page-wrapper" v-bind:style="hh">
+    <div class="page-wrapper">
         <mapbox
                 :spots="spots"
                 :isMobile="isMobile()"
@@ -43,14 +43,6 @@
                 'getSpots',
                 'selectSpot',
             ] ),
-            headerHeight() {
-                var header = document.querySelectorAll( 'header' )[ 0 ];
-                console.log( header );
-                var height = header.offsetHeight(true);
-
-                this.hh = 'margin-top: ' + height + 'px';
-
-            },
             isMobile() {
                 if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test( navigator.userAgent ) ) {
                     return true
@@ -61,7 +53,6 @@
         },
         mounted() {
             this.getSpots();
-            this.headerHeight();
         },
         computed: {
             ...mapGetters( {
