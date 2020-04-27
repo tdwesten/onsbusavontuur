@@ -1,0 +1,36 @@
+//== README
+//
+// We gebruiken de BEM methode voor de CSS structuur,
+// Voorbeelden: https://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/
+// Voorbeelden: https://css-tricks.com/bem-101/
+//
+// STRUCTUUR
+// We hanteren de volgende mappenstructuur:
+// -- Config       => alle variables
+// -- Libs         => alle externe scss bronnen (alle css via import inladen, niet los in het thema via <link />)
+// -- Globals      => hierin definieren we de globale styling
+// -- Helpers      => hierin definieren we classes voor algemene styling, zoals background-color classes,
+//                    text-color classes, resppnsive images, herbruikbare spacing classes, etc.
+// -- Components   => hier komt alle css die specifiek voor een onderdeel in een thema is geschreven
+//                    elke '.block' krijgt een eigen bestand, zoals '_header.scss'
+//== Config
+//=========================================================
+@import "mixins/*.scss";
+@import "variables";
+//== Libs
+//=========================================================
+@import url("https://fonts.googleapis.com/css?family=Encode+Sans:400,600,700");
+@import "lib/base-theme-sass/base-theme-sass";
+
+//== Globals
+//=========================================================
+@import "globals/*.scss";
+
+
+//== Helpers
+//=========================================================
+@import "helpers/*.scss";
+
+//== Components
+//=========================================================
+@import "components/*.scss";

@@ -1,0 +1,35 @@
+$black: #000 !default;
+$gray: #666 !default;
+$white: #fff !default;
+$color-error: #ed1c24 !default;
+
+$font-weight-light: 300 !default;
+$font-weight-normal: 400 !default;
+$font-weight-demi: 500 !default;
+$font-weight-medium: 600 !default;
+$font-weight-bold: 700 !default;
+$font-weight-black: 900 !default;
+
+$font-family-base: Arial, Helvetica, sans-serif !default;
+$font-size-base: 1.4rem !default;
+$line-height-base: 1.42 !default;
+$line-height-base-computed: $font-size-base * $line-height-base !default;
+$font-size-small: 80% !default;
+
+// TODO: de onderstaande variabelen horen eigenlijk bij lemonade en mogen hier dus eigenlijk niet staan maar ze zijn wel nodig
+
+$column-gutter-width: 2.4rem !default;
+$soda-gutter: $column-gutter-width !default;
+$bit-padding: $column-gutter-width / 2 !default;
+
+// Media Queries Breakpoints
+$screen-mobile-min:			320px !default;
+$screen-mobile-max:			480px !default;
+$screen-xs-min:				$screen-mobile-max + 1px !default;
+$screen-xs-max:				767px !default;
+$screen-sm-min:				$screen-xs-max + 1px !default;
+$screen-sm-max:				1023px !default;
+$screen-sm-landscape-max: 	1024px !default;
+$screen-md-min:				$screen-sm-max + 1px !default;
+$screen-md-max:				1200px !default;
+$screen-lg-min:				$screen-md-max + 1px !default;

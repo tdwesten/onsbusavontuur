@@ -1,0 +1,3 @@
+@function get-line-height($font-size, $line-height, $digits: 4) {
+    @return decimal-round(strip-unit($line-height) / strip-unit($font-size), $digits);
+}

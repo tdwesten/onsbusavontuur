@@ -1,0 +1,29 @@
+@import 'config';
+
+/**
+ * Row wrapper class, flex box parent.
+ */
+
+.#{$soda-class-row} {
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.#{$soda-class-container} .#{$soda-class-row} {
+	@include spacing(( -$bit-padding ), margin, horizontal);
+}
+
+%#{$soda-class-col}-flex {
+	@extend %#{$soda-class-col};
+	flex-grow: 1;
+	flex-basis: 0;
+	max-width: 100%;
+}
+
+@each $i in $soda-frame-direction {
+	.#{$soda-class-row}--direction-#{$i} {
+		flex-direction: $i;
+	}
+}

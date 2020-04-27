@@ -1,0 +1,42 @@
+.flex {
+	display: flex;
+}
+
+@mixin alingment-classes($namespace) {
+
+	@each $i in $soda-align-options {
+		.#{$soda-class-alignment}-#{$namespace}-#{$i} {
+			align-items: #{$i};
+		}
+	}
+
+	@each $i in $soda-justify-options {
+		.#{$soda-class-justify}-#{$namespace}-#{$i} {
+			justify-content: #{$i};
+		}
+	}
+
+	@each $i in $soda-align-self-options {
+		.#{$soda-class-align-self}-#{$namespace}-#{$i} {
+			align-self: #{$i};
+		}
+	}
+}
+
+@each $val in $soda-breakpoints {
+
+	@if length($val) == 1 {
+		$namespace: nth($val, 1);
+		@include alingment-classes($namespace);
+	} @else {
+
+		$namespace: nth($val, 1);
+		$size: nth($val, 2);
+
+		@media only screen and (min-width: #{$size}) {
+			@include alingment-classes($namespace);
+		}
+	}
+
+}
+

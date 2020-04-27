@@ -1,0 +1,30 @@
+//== Buttons
+//=========================================================
+input[type=submit],
+button,
+.button {
+	display: inline-block;
+	padding: .8rem 1.2rem;
+	cursor: pointer;
+	background-color: $gray;
+	background-image: none;
+	border: 0;
+	border-radius: .3rem;
+	font-family: $font-family-base;
+	font-size: $font-size-base;
+	font-weight: $font-weight-bold;
+	line-height: $line-height-base;
+	text-align: center;
+	text-decoration: none;
+	color: $white;
+	user-select: none;
+	-webkit-appearance: none;
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	&:focus {
+		outline: 0;
+	}
+}

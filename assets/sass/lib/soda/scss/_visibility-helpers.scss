@@ -1,0 +1,54 @@
+@import 'config';
+
+@mixin visible-sizes($namespace) {
+	.visible-#{$namespace} {
+		display: flex !important;
+	}
+}
+
+@mixin hidden-sizes($namespace) {
+	.hidden-#{$namespace} {
+		display: none !important;
+	}
+}
+
+@mixin hide-smallest-size($smallest-namespace) {
+	@for $i from 1 through 2 {
+		$size: nth($soda-breakpoints, $i);
+		@if (length($size) == 3) {
+			$size-min: nth($size, 2);
+
+			@media only screen and (min-width: #{$size-min}) {
+				.visible-#{$smallest-namespace} {
+					display: none !important;
+				}
+			}
+		}
+	}
+}
+
+@each $val in $soda-breakpoints {
+	@if length($val) == 1 {
+		$namespace: nth($val, 1);
+		@include visible-sizes($namespace);
+		@include hidden-sizes($namespace);
+		@include hide-smallest-size($namespace);
+	} @else if length($val) == 3 {
+		$namespace: nth($val, 1);
+		$size-min: nth($val, 2);
+		$size-max: nth($val, 3);
+
+		@media only screen and (min-width: #{$size-min}) and (max-width: #{$size-max}) {
+			@include visible-sizes($namespace);
+			@include hidden-sizes($namespace);
+		}
+	} @else {
+		$namespace: nth($val, 1);
+		$size-min: nth($val, 2);
+
+		@media only screen and (min-width: #{$size-min}) {
+			@include visible-sizes($namespace);
+			@include hidden-sizes($namespace);
+		}
+	}
+}

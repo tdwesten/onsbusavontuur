@@ -1,0 +1,9 @@
+export const STORE_FETCHED_SPOTS      = 'STORE_FETCHED_SPOTS';
+export const SPOTS_LOADED             = 'SPOTS_LOADED';
+export const STORE_SELECTED_SPOT      = 'STORE_SELECTED_SPOT';
+export const TOGGLE_SPOT_ACTIVE_STATE = 'TOGGLE_SPOT_ACTIVE_STATE';
+
+// events
+export const MARKER_SELECT = 'MARKER_SELECT';
+export const SPOT_SCROLL = 'SPOT_SCROLL';
+

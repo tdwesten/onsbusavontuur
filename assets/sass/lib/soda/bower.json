@@ -1,0 +1,24 @@
+{
+  "name": "soda",
+  "description": "Soda Flex Grid System",
+  "main": "soda.scss",
+  "authors": [
+    "Jannes & Mannes <info@jannesmannes.nl>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "flexbox",
+    "grid",
+    "scss",
+    "sass",
+    "framework"
+  ],
+  "homepage": "soda.jannesmannes.nl",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

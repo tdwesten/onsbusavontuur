@@ -1,0 +1,8 @@
+// Text align helpers
+
+
+@each $i in $text-align-options {
+	.text-#{$i} {
+		text-align: #{$i};
+	}
+}

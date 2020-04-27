@@ -1,0 +1,104 @@
+// https://github.com/matthewsimo/scss-flex-grid/blob/master/_flex-grid.scss
+
+/**
+ * Grid setup
+ *
+ * The grid will calculate dimensions based on these two variables:
+ * $soda-columns will inform the grid loops how many columns there should be.
+ * $soda-gutter will inform the grid loops how big eac column's gutters should be.
+ *
+ * The grid will name columns, rows, offsets based on these three variables:
+ * $soda-class-row string used for the row class
+ * $soda-class-col string used for the column class
+ * $soda-class-off string used for the offset class
+ */
+
+$font-size-html: 62.5% !default;
+$soda-columns: 12 !default;
+$soda-gutter: 2.4rem !default;
+// @todo: deprecate this variable
+$column-gutter-width: $soda-gutter !default;
+$bit-padding: $soda-gutter / 2 !default;
+$soda-vertical-padding: true !default;
+$soda-horizontal-padding: true !default;
+$soda-container-max-width: 110rem !default;
+
+$soda-breakpoints: (
+		(xxs),
+		(xs, 34em, 47.9375em),
+		(sm, 48em, 63.9375em),
+		(md, 64em, 75em),
+		(lg, 75.0625em),
+) !default;
+
+$soda-breakpoints-map: (
+		xxs: (
+				min: 0,
+				max: 33.9375em
+		),
+		xs: (
+				min: 34em,
+				max: 47.9375em
+		),
+		sm: (
+				min: 48em,
+				max: 63.9375em
+		),
+		md: (
+				min: 64em,
+				max: 75em
+		),
+		lg: (
+				min: 75.0625em
+		)
+) !default;
+
+$screen-xxs-max: map-get(map-get($soda-breakpoints-map, xxs), max) !default;
+$screen-xs-min: map-get(map-get($soda-breakpoints-map, xs), min) !default;
+$screen-xs-max: map-get(map-get($soda-breakpoints-map, xs), max) !default;
+$screen-sm-min: map-get(map-get($soda-breakpoints-map, sm), min) !default;
+$screen-sm-max: map-get(map-get($soda-breakpoints-map, sm), max) !default;
+$screen-md-min: map-get(map-get($soda-breakpoints-map, md), min) !default;
+$screen-md-max: map-get(map-get($soda-breakpoints-map, md), max) !default;
+$screen-lg-min: map-get(map-get($soda-breakpoints-map, lg), min) !default;
+
+$soda-class-container: 'container' !default;
+$soda-class-row: 'frame' !default;
+$soda-class-col: 'bit' !default;
+$soda-class-off: '#{$soda-class-col}-offset' !default;
+$soda-class-order: '#{$soda-class-col}-order' !default;
+$soda-class-alignment: '#{$soda-class-row}--align' !default;
+$soda-class-justify: '#{$soda-class-row}--justify' !default;
+$soda-class-align-self: '#{$soda-class-col}--align' !default;
+
+$soda-frame-direction: (
+	row,
+	row-reverse,
+	column,
+	column-reverse
+);
+
+$soda-align-options: (
+	flex-start,
+	flex-end,
+	center,
+	baseline,
+	stretch
+);
+
+$soda-align-self-options: $soda-align-options;
+
+$soda-justify-options: (
+	flex-start,
+	flex-end,
+	center,
+	space-around,
+	space-between
+);
+
+$text-align-options: (
+	left,
+	right,
+	center,
+	justify
+);

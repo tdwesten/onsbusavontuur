@@ -1,0 +1,132 @@
+@import "../mixins/base-mixins";
+
+//== Typography
+//====================================================
+html {
+  font-size: $font-size-html;
+}
+
+body {
+  @include responsive-font-size(
+        (($font-size-base-xxs), ($screen-sm-min, $font-size-base))
+  );
+  background: $gray-lighter;
+  font-family: $font-family-base;
+  font-weight: $font-weight-normal;
+  line-height: get-line-height($font-size-base, $line-height-base);
+  color: $font-color;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+
+
+}
+
+a {
+  text-decoration: none;
+  transition: $link-transition;
+  -webkit-backface-visibility: hidden;
+  color: $color-primary;
+
+  &:hover {
+    text-decoration: none;
+    color: darken($color-primary, 15%);
+  }
+}
+
+b,
+strong {
+  font-weight: $font-weight-demi;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  font-family: $font-family-base;
+  line-height: $line-height-small;
+  font-weight: $font-weight-demi;
+
+  small {
+    @include responsive-font-size(
+          (($font-size-small-xxs), ($screen-sm-min, $font-size-small))
+    );
+    display: block;
+  }
+}
+
+h1,
+.h1 {
+  @include h1;
+}
+
+h2,
+.h2 {
+  @include h2;
+}
+
+h3,
+.h3 {
+  @include h3;
+}
+
+h4,
+.h4 {
+  @include h4;
+}
+
+h5,
+.h5 {
+  @include h5;
+}
+
+h6,
+.h6 {
+  @include h6;
+}
+
+.lead {
+  @include responsive-font-size(
+        (($font-size-lead-xxs), ($screen-sm-min, $font-size-lead))
+  );
+}
+
+blockquote {
+  @include responsive-font-size(
+        (($font-size-lead-xxs), ($screen-sm-min, $font-size-lead-xxs))
+  );
+  font-style: italic;
+  line-height: $line-height-large;
+
+  p {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+ul,
+ol {
+  margin-bottom: $bit-padding * 2;
+  margin-left: $bit-padding * 2;
+}
+
+.page-content-wrapper {
+  position: relative;
+}
+
+.vue-page {
+  opacity: 0;
+  transition: opacity 250ms ease-in-out;
+
+  &.isLoaded {
+    opacity: 1;
+  }
+}

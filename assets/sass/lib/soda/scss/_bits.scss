@@ -1,0 +1,44 @@
+@import 'config';
+
+/**
+ * Generate a set of grid column classes using a namespace
+ *
+ * .#{$soda-class-col}-[namespace] for intelligent column division
+ * .#{$soda-class-col}-[namespace]-[number] for a column that covers a specific number of columns (e.g. 1-12 by default)
+ * .#{$soda-class-off}-[namespace]-[number] for pushing a col a specific number of columns (e.g. 1-11 by default)
+ * .#{$soda-class-off}-[namespace]-reset for resetting a col's offset for that and larger namespaces
+ */
+
+[class^="#{$soda-class-col}"] {
+	max-width: 100%;
+	flex: 0 0 100%;
+}
+
+%#{$soda-class-col} {
+	@if $soda-horizontal-padding {
+		@include spacing(($bit-padding), padding, horizontal);
+	}
+	@if $soda-vertical-padding {
+		@include spacing(( $bit-padding ), padding, vertical);
+	}
+}
+
+@each $val in $soda-breakpoints {
+	$namespace: nth($val, 1);
+	@include grid-base($namespace);
+}
+
+@each $val in $soda-breakpoints {
+	@if length($val) == 1 {
+		$namespace: nth($val, 1);
+		@include grid-sizes($namespace);
+	} @else {
+
+		$namespace: nth($val, 1);
+		$size: nth($val, 2);
+
+		@media only screen and (min-width: #{$size}) {
+			@include grid-sizes($namespace);
+		}
+	}
+}

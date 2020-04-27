@@ -1,0 +1,10 @@
+.vue-page {
+    position: relative;
+
+    .page-wrapper {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+}

@@ -1,0 +1,66 @@
+// Spacing mixin to create uniform margin/padding
+//
+@mixin spacing($value, $type: margin, $orientation: vertical) {
+	@if $orientation == vertical {
+		#{$type}-top: $value;
+		#{$type}-bottom: $value;
+	} @else {
+		#{$type}-left: $value;
+		#{$type}-right: $value;
+	}
+}
+
+
+@mixin grid-base($namespace) {
+	.#{$soda-class-col}-#{$namespace} {
+		@extend %#{$soda-class-col}-flex;
+	}
+
+	@for $i from 1 through $soda-columns {
+		.#{$soda-class-col}-#{$namespace}-#{$i} {
+			@extend %#{$soda-class-col};
+		}
+	}
+}
+
+
+@mixin grid-sizes($namespace) {
+
+	// Run the loop for as many columns as speficied
+	@for $i from 1 through $soda-columns {
+		.#{$soda-class-col}-#{$namespace}-#{$i} {
+
+			@if ($i == 12) {
+				flex: 1 1 100%;
+				max-width: get-col-percent($i);
+			} @else {
+				max-width: get-col-percent($i);
+				flex: 0 0 get-col-percent($i);
+			}
+		}
+	}
+
+
+	@for $i from 0 through $soda-columns {
+
+		// Don't include the .off class for the last column
+		@if ($i != $soda-columns) {
+			.#{$soda-class-off}-#{$namespace}-#{$i} {
+				margin-left: get-col-percent($i);
+			}
+		}
+
+	}
+
+	.#{$soda-class-off}-#{$namespace}-reset {
+		margin-left: 0;
+	}
+
+}
+
+
+@function get-col-percent($column-num) {
+
+	@return $column-num / $soda-columns * 100%;
+
+}

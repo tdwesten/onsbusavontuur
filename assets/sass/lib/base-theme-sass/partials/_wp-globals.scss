@@ -1,0 +1,96 @@
+//== Global classes used by Wordpress text editor
+//
+
+.entry-content img {
+    margin: 0 0 1.5rem;
+    @extend .img-responsive;
+
+}
+
+.alignnone,
+img.alignnone {
+    @extend .img-responsive;
+    display: inline;
+}
+
+.alignleft,
+img.alignleft {
+    @extend .img-responsive;
+    margin-right: 1.5rem;
+    display: inline;
+    float: left;
+}
+
+.alignright,
+img.alignright {
+    @extend .img-responsive;
+    margin-left: 1.5rem;
+    display: inline;
+    float: right;
+}
+
+.aligncenter,
+img.aligncenter {
+    @extend .img-responsive;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    clear: both;
+}
+
+.wp-caption {
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    padding-top: .5rem;
+
+    img {
+        @extend .img-responsive;
+        border: 0 none;
+        padding: 0;
+        margin: 0;
+    }
+
+    p.wp-caption-text {
+        margin: 0;
+        font-size: 1.2rem;
+        line-height: 1.5;
+    }
+}
+
+.wp-smiley {
+    margin: 0 !important;
+    max-height: 1em;
+}
+
+blockquote.left {
+    float: left;
+    margin-right: 2rem;
+    text-align: right;
+    margin-left: 0;
+    width: 33%;
+}
+
+blockquote.right {
+    margin-left: 2rem;
+    text-align: left;
+    margin-right: 0;
+    width: 33%;
+    float: right;
+}
+
+.bit-images-2 {
+    width: 50% !important;
+    margin: 0 !important;
+    height: auto;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    @media (max-width: $screen-sm-min) {
+        width: 100% !important;
+    }
+}

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ons Bus Avontuur</title>
+    <link
+            href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css"
+            rel="stylesheet"
+    />
+    <link
+            href="https://cdn.jsdelivr.net/npm/vue-mapbox@latest/dist/vue-mapbox.css"
+            rel="stylesheet"
+    />
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@latest/dist/vue.min.js"></script>
+    <script
+            type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/vue-mapbox@latest/dist/vue-mapbox.min.js"
+    ></script>
+    <link rel="stylesheet" href="/dist/styles/style.css">
+
+    <meta name='robots' content='noindex,follow'/>
+    <link rel='dns-prefetch' href='//s.w.org'/>
+
+    <style>
+
+        .page {
+            opacity: 0;
+            transition: opacity 250ms ease-in-out;
+        }
+
+        .page.isLoaded {
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body>
+<div id="app" class="page"></div>
+<script type='text/javascript' src='/dist/scripts/manifest.js'></script>
+<script type='text/javascript' src='/dist/scripts/vendor.js'></script>
+<script type='text/javascript' src='/dist/scripts/app.js'></script>
+</body>
+</html>

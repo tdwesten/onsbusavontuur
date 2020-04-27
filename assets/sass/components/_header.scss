@@ -1,0 +1,54 @@
+.header {
+  background-color: $color-primary;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: $bit-padding / 2 $bit-padding;
+
+  @media (min-width: $screen-md-min) {
+    padding: $bit-padding * 2;
+  }
+
+  &__inner {
+    width: 100%;
+
+    @media (min-width: $screen-md-min) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  a {
+    color: $white;
+  }
+
+  &__brand {
+    font-weight: $font-weight-medium;
+    @include responsive-font-size((($font-size-large-xxs), ($screen-md-min, $font-size-lead)));
+    padding-right: $bit-padding;
+
+    @media (max-width: $screen-sm-max) {
+      width: 100%;
+    }
+  }
+
+  &__underline {
+    display: block;
+    padding-top: 2px;
+    color: $white;
+    @include responsive-font-size((($font-size-small-xxs), ($screen-sm-min, $font-size-small)));
+
+    @media (min-width: $screen-md-min) {
+      display: inherit;
+
+    }
+  }
+
+  &__instagram {
+    justify-self: flex-end;
+
+  }
+}

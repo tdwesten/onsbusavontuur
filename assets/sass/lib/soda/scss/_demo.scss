@@ -1,0 +1,33 @@
+// Import Soda to use it inside your own project
+@import 'soda';
+
+// For Demo Purposes Only.
+$base-grid-color: #80c2f5;
+$additional-grid-color: #2DBFB2;
+$grid12-color: #218C83;
+
+body {
+	font-family: sans-serif;
+	font-size: 14px;
+}
+
+.box {
+	background: $base-grid-color;
+	text-align: center;
+	padding: 20px 0;
+	height: 100%;
+
+	&.box--new {
+		background: $additional-grid-color;
+	}
+
+	&.box--grid12 {
+		background: $grid12-color;
+	}
+}
+
+
+.alingment-demo {
+	height: 500px;
+	background-color: #eee;
+}

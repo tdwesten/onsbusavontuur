@@ -1,0 +1,13 @@
+//== Coloring classes
+//=========================================================
+@each $name, $color in $color-names {
+    .background--#{$name} {
+        background-color: $color;
+    }
+}
+
+@each $name, $color in $color-names {
+    .text--#{$name} {
+        color: $color;
+    }
+}

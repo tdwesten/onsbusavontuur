@@ -1,0 +1,28 @@
+//== Config
+//=========================================================
+@import 'variables';
+@import 'mixins/base-mixins';
+
+//== Libs
+//=========================================================
+@import 'lib/base-theme-sass/base-theme-sass';
+@import 'lib/soda/scss/soda';
+@import 'lib/fontawesome/fontawesome';
+@import 'lib/fontawesome/fa-regular';
+
+//== Globals
+//=========================================================
+@import 'globals/*.scss';
+
+//== Components
+//=========================================================
+@import 'components/forms';
+@import 'components/buttons';
+
+//== Editor style specific
+//=========================================================
+body {
+    margin: 9px 10px;
+    background-color: $white;
+    color: $black;
+}

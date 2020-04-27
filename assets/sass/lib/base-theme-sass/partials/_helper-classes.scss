@@ -1,0 +1,48 @@
+//== Helper classes
+//====================================================
+.clearfix {
+	@include clearfix;
+}
+
+.pull-right {
+	float: right;
+}
+
+.pull-left {
+	float: left;
+}
+
+.pull-none {
+	float: none;
+}
+
+.block {
+	display: block;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-break-word {
+	word-wrap: break-word;
+}
+
+.list-unstyled,
+ul.list-unstyled {
+	margin-left: 0;
+	padding-left: 0;
+	list-style: none;
+
+	li {
+		list-style: none;
+	}
+}

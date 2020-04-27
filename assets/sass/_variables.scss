@@ -1,0 +1,94 @@
+//== Grid overrides
+//=========================================================
+
+//== Colors
+//=========================================================
+
+$black: #000;
+$gray-darker: #1d1d1b;
+$gray-dark: #323232;
+$gray: #a4a4a4;
+$gray-light: #d8d8d8;
+$gray-lighter: #f6f6f6;
+$white: #fff;
+$night: #052c66;
+
+$color-primary: #dc5443;
+$color-secondary: #55b9db;
+$font-color: $black;
+
+$border-color: #d8d8d8;
+
+$color-names: (
+    "black": $black,
+    "gray-darker": $gray-darker,
+    "gray-dark": $gray-dark,
+    "white": $white,
+    "primary": $color-primary,
+    "secondary": $color-secondary,
+    "font-color": $font-color
+);
+
+//== Fonts
+//=========================================================
+$font-family-base: "Encode sans", sans-serif;
+$font-family-headings: "Encode sans", sans-serif;
+$font-size-html: 62.5%;
+
+$font-size-base-xxs: 1.3rem;
+$font-size-base: 1.8rem;
+$font-size-small-xxs: 1.2rem;
+$font-size-small: 1.5rem;
+
+$font-size-large-xxs: 1.5rem;
+$font-size-large: 2rem;
+
+$font-size-h1-xxs: 2.2rem;
+$font-size-h1: 3.2rem;
+$font-size-h2-xxs: 1.8rem;
+$font-size-h2: 2.4rem;
+$font-size-h3-xxs: $font-size-large-xxs;
+$font-size-h3: $font-size-large;
+$font-size-h4-xxs: $font-size-base-xxs;
+$font-size-h4: $font-size-base;
+$font-size-h5-xxs: $font-size-base-xxs;
+$font-size-h5: $font-size-base;
+$font-size-h6-xxs: $font-size-small-xxs;
+$font-size-h6: $font-size-small;
+$font-size-lead-xxs: $font-size-large-xxs;
+$font-size-lead: 2.3rem;
+
+$line-height-base: 3rem;
+$line-height-small: 1.25;
+$line-height-tight: 1.1;
+$line-height-large: 1.5;
+
+$line-height-h1: 6.4rem;
+$line-height-h2: 5.6rem;
+
+$line-height-base-computed: 32;
+
+//== Transitions
+//=========================================================
+$link-transition: border 0.2s, background 0.2s, color 0.2s;
+
+//== Z-indexes
+//=========================================================
+$z-index-relative: 1;
+$z-index-mobile-menu: 1000;
+
+//== Mobile menu
+//=========================================================
+$mobile-menu-width: 28rem;
+
+//== Slick-carousel overrides
+//=========================================================
+$slick-font-path: "../vendor/slick-carousel/slick/fonts/";
+$slick-loader-path: "../vendor/slick-carousel/slick/";
+$slick-arrow-color: $color-primary;
+
+//== Font awesome variables
+//=========================================================
+$fa-font-path: "../fonts/fontawesome";
+
+$border-radius: 3px;

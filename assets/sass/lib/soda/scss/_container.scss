@@ -1,0 +1,11 @@
+html {
+	font-size: $font-size-html;
+}
+
+.#{$soda-class-container} {
+	@if $soda-horizontal-padding {
+		@include spacing(($bit-padding), padding, horizontal);
+	}
+	max-width: $soda-container-max-width;
+	margin: 0 auto;
+}

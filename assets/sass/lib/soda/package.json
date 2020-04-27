@@ -1,0 +1,43 @@
+{
+  "name": "soda",
+  "version": "0.5",
+  "description": "Soda Flex Grid System",
+  "author": "Jannes & Mannes <info@jannesmannes.nl>",
+  "contributers": [
+    {
+      "name": "Jan Henkes",
+      "email": "jan@jannesmannes.nl"
+    },
+    {
+      "name": "Jorn Henkes",
+      "email": "jorn@jannesmannes.nl"
+    },
+    {
+      "name": "Thomas van der Westen",
+      "email": "thomas@jannesmannes.nl"
+    }
+  ],
+  "website": {
+    "url": "http://wwwjannesmannes.nl"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://bitbucket.org/jannesenmannes/soda.git"
+  },
+  "private": true,
+  "engines": {
+    "node": "6.9.*",
+    "npm": "~4.0.2"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.5",
+    "gulp": "~3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-clean-css": "2.3.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "~1.1.0",
+    "gulp-rename": "^1.2.0",
+    "gulp-sass": "3.0.0",
+    "gulp-sourcemaps": "^1.5.1"
+  }
+}

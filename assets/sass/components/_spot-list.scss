@@ -1,0 +1,120 @@
+.spot-list {
+  position: fixed;
+  background-color: rgba($white, 0.5);
+  z-index: 10;
+  float: right;
+  top: 50%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: top 250ms ease-in-out;
+
+  &--large {
+    top: 35%;
+  }
+
+  @media (min-width: $screen-md-min) {
+    background-color: rgba($white, 0.5);
+    width: 600px;
+    z-index: 10;
+    top: 86px;
+    left: inherit;
+  }
+}
+
+.spot {
+  padding: $bit-padding;
+  margin: $bit-padding;
+  position: relative;
+  z-index: 10;
+  background-color: $white;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  cursor: pointer;
+
+  @media (min-width: $screen-md-min) {
+    padding: $bit-padding * 2;
+    margin: $bit-padding * 4 $bit-padding * 4;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  &--is-active {
+    border-color: $color-primary;
+  }
+
+  &__title {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    line-height: $line-height-small;
+  }
+
+  &__meta {
+    display: block;
+    margin-bottom: $bit-padding;
+    color: $gray;
+    position: relative;
+
+    @include responsive-font-size(
+          (($font-size-small-xxs), ($screen-sm-min, $font-size-small))
+    );
+
+    .post-excerpt__location &,
+    .post-excerpt__startpoint & {
+      margin-bottom: 0;
+      font-size: $font-size-small-xxs;
+    }
+
+    &__item {
+      margin-right: $bit-padding / 2;
+      margin-left: $bit-padding / 2;
+      max-width: 65%;
+      color: $gray;
+
+      &::before {
+        display: inline-block;
+        width: 0.5rem;
+        background-color: $gray-light;
+        height: 0.5rem;
+        transform: translateX(-140%) translateY(-45%);
+        content: " ";
+        border-radius: 50%;
+      }
+
+      &:first-child {
+        margin-left: 0;
+
+        &::before {
+          display: none;
+        }
+      }
+
+      &:last-child {
+        &::before {
+          display: none;
+        }
+      }
+
+      &:nth-child(2) {
+        &::before {
+          display: inline-block !important;
+        }
+      }
+    }
+  }
+
+  &__startpoint {
+    text-align: center;
+    padding-bottom: $bit-padding;
+
+    &:hover {
+      border-color: transparent;
+      cursor: none;
+    }
+  }
+}
