@@ -1151,7 +1151,14 @@ ol {
 }
 
 .map__wrapper--small {
-  bottom: 65%;
+  bottom: 0;
+}
+
+@media (min-width: 1024px) {
+  .map__wrapper--small {
+    right: 0 !important;
+    width: 100% !important;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -1213,14 +1220,23 @@ ol {
   border-right: 2px solid #dc5443;
   width: 10px;
   height: 10px;
-  margin-top: 5px;
-  transform: rotate(-45deg);
+  transform: rotate(135deg);
+  margin-bottom: 5px;
   transition: rotate 250ms ease;
 }
 
 .map__wrapper .map__toggle--min::before {
-  transform: rotate(135deg);
-  margin-bottom: 5px;
+  transform: rotate(-45deg);
+  margin-bottom: 0px;
+}
+
+@media (min-width: 1024px) {
+  .map__wrapper .map__toggle {
+    top: 145px;
+    bottom: inherit;
+    right: -2px;
+    transform: rotate(-90deg);
+  }
 }
 
 .vue-page {
@@ -1249,7 +1265,13 @@ ol {
 }
 
 .spot-list--large {
-  top: 35%;
+  top: 100%;
+}
+
+@media (min-width: 1024px) {
+  .spot-list--large {
+    width: 0 !important;
+  }
 }
 
 @media (min-width: 1024px) {

@@ -12,7 +12,11 @@
   transition: top 250ms ease-in-out;
 
   &--large {
-    top: 35%;
+    top: 100%;
+
+    @media (min-width: $screen-md-min) {
+        width: 0 !important;
+    }
   }
 
   @media (min-width: $screen-md-min) {

@@ -1,6 +1,6 @@
 <template>
     <div class="map__wrapper" v-bind:class="{ 'map__wrapper--small' : mapStatusIsSmall }">
-        <div class="map__toggle hidden-tablet hidden-desktop" @click="toggleMapStatus" v-bind:class="{'map__toggle--min': mapStatusIsSmall }"></div>
+        <div class="map__toggle" @click="toggleMapStatus" v-bind:class="{'map__toggle--min': mapStatusIsSmall }"></div>
         <MglMap
                 :accessToken="accessToken"
                 :mapStyle="mapStyle"
@@ -53,7 +53,7 @@
                 sourceId: 'route',
                 asyncActions: false,
                 route: [],
-                mapStatusIsSmall: false
+                mapStatusIsSmall: false,
             };
         },
         computed: {
@@ -74,8 +74,14 @@
                 this.map = map;
             },
             toggleMapStatus() {
-                this.mapStatusIsSmall = !this.mapStatusIsSmall;
-                this.$emit( 'mapStatusIsSmall', this.mapStatusIsSmall );
+                if ( typeof this.map === 'object' ) {
+                    this.mapStatusIsSmall = !this.mapStatusIsSmall;
+                    this.$emit( 'mapStatusIsSmall', this.mapStatusIsSmall );
+
+                    setTimeout( () => {
+                        this.map.map.resize();
+                    }, 300 );
+                }
             },
             addMarkerClass: function ( spot ) {
                 var elmClass = 'map-marker--' + spot.type;

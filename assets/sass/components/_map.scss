@@ -9,7 +9,12 @@
         transition: bottom 250ms ease-in-out;
 
         &--small {
-            bottom: 65%;
+            bottom: 0;
+
+            @media (min-width: $screen-md-min) {
+                right: 0 !important;
+                width: 100% !important;
+            }
         }
 
         @media (min-width: $screen-md-min) {
@@ -69,17 +74,24 @@
                 border-right: 2px solid $color-primary;
                 width: 10px;
                 height: 10px;
-                margin-top: 5px;
-                transform: rotate( -45deg );
+                transform: rotate( 135deg );
+                margin-bottom: 5px;
                 transition: rotate 250ms ease;
-
             }
 
             &--min {
                 &::before {
-                    transform: rotate( 135deg );
-                    margin-bottom: 5px;
+                    transform: rotate( -45deg );
+                    margin-bottom: 0px;
                 }
+            }
+
+            @media (min-width: $screen-md-min) {
+                top: 145px;
+                bottom: inherit;
+                right: -2px;
+                transform: rotate(-90deg);
+
             }
         }
 

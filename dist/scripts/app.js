@@ -961,8 +961,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.map = map;
     },
     toggleMapStatus: function toggleMapStatus() {
-      this.mapStatusIsSmall = !this.mapStatusIsSmall;
-      this.$emit('mapStatusIsSmall', this.mapStatusIsSmall);
+      var _this = this;
+
+      if (_typeof(this.map) === 'object') {
+        this.mapStatusIsSmall = !this.mapStatusIsSmall;
+        this.$emit('mapStatusIsSmall', this.mapStatusIsSmall);
+        setTimeout(function () {
+          _this.map.map.resize();
+        }, 300);
+      }
     },
     addMarkerClass: function addMarkerClass(spot) {
       var elmClass = 'map-marker--' + spot.type;
@@ -978,10 +985,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.selectSpot(spot);
     },
     addRouteToMap: function addRouteToMap() {
-      var _this = this;
+      var _this2 = this;
 
       _api__WEBPACK_IMPORTED_MODULE_3__["default"].getRoute(function (route) {
-        _this.geoJsonSource = {
+        _this2.geoJsonSource = {
           'type': 'geojson',
           'data': {
             'type': 'Feature',
@@ -34265,7 +34272,7 @@ var render = function() {
     },
     [
       _c("div", {
-        staticClass: "map__toggle hidden-tablet hidden-desktop",
+        staticClass: "map__toggle",
         class: { "map__toggle--min": _vm.mapStatusIsSmall },
         on: { click: _vm.toggleMapStatus }
       }),
