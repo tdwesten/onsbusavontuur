@@ -30,7 +30,7 @@
     "sass-lint": "^1.12.1",
     "sass-loader": "^7.1.0",
     "tether": "^1.4.0",
-    "tinymce": "^4.5.5",
+    "tinymce": "^5.10.7",
     "url-loader": "^1.1.2",
     "vue-loader": "^15.5.1",
     "vue-router": "^3.0.2",
